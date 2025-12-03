@@ -1,9 +1,19 @@
 app = "spotify-xvllsw"
 primary_region = "iad"
 
-[checks]
-  autostart = false
-  autoskip = true
+[http_service]
+  internal_port = 8080
+  force_https = false
+  auto_stop_machines = false
+  auto_start_machines = false
+  min_machines_running = 0
+  processes = ["worker"]
+  protocol = "tcp"
+
+[[http_service.checks]]
+  type = "tcp"
+  interval = "100000h"
+  timeout = "10s"
 
 [build]
 
