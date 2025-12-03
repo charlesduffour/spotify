@@ -1,10 +1,14 @@
 app = "spotify-xvllsw"
 primary_region = "iad"
 
+[checks]
+  autostart = false
+  autoskip = true
+
 [build]
 
 [processes]
-worker = "python main.py"
+  worker = "python main.py"
 
 [[vm]]
   memory = "1gb"
